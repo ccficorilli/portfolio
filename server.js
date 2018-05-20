@@ -22,6 +22,8 @@ app.get('/', (req, res) => {
     }
     res.render('index', data);
 });
+app.get('/contact', (req, res) => res.render('contact'));
+app.post('/thanks', (req, res) => res.render({ contact: req.body}));
 app.listen(8080, () => {
     console.log('listening at http://localhost:8080');
 });
