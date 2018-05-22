@@ -1,29 +1,26 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const profile = require('./profile');
+//const profile = require('./profile');
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.use('/profile', profile);
+//app.use('/profile', profile);
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('dist'));
+app.use(express.static('public'));
 
 app.set('views', './views');
 
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    const data = {
-        person: {
-            firstName: 'Chris',
-            lastName: 'Ficorilli'
-        }
-    }
-    res.render('index', data);
+    res.render('index');
 });
 app.get('/contact', (req, res) => res.render('contact'));
-app.post('/thanks', (req, res) => res.render({ contact: req.body}));
-app.listen(8080, () => {
-    console.log('listening at http://localhost:8080');
-});
+app.post('/thanks', (req, res) => res.render('thanks', { contact: req.body}));
+
+
+app.listen(PORT, () => console.log(`Server is listening on http://localhost:${PORT}`));

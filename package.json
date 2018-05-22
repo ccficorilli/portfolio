@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "My personal portfolio",
   "main": "index.js",
-  "scripts": {
-    "test": "echo\\'Error: no test specified\\' && exit 1'"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ccficorilli/portfolio.git"
@@ -16,10 +13,44 @@
     "url": "https://github.com/ccficorilli/portfolio/issues"
   },
   "homepage": "https://github.com/ccficorilli/portfolio#readme",
+  "scripts": {
+    "test": "echo\\'Error: no test specified\\' && exit 1'",
+    "build": "npm run less && webpack",
+    "start": "npm run build && node server/server.js",
+    "less": "lessc src/css/style.less dist/css/style.css",
+    "lint": "eslint ."
+  },
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "axios": "^0.16.1",
     "ejs": "^2.6.1",
-    "express": "^4.16.3",
-    "morgan": "^1.9.0"
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.15.3",
+    "json-loader": "^0.5.4",
+    "morgan": "^1.8.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "serve-favicon": "^2.0.1",
+    "webpack": "^3.6.0"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.6.1",
+    "babel": "^6.3.26",
+    "babel-loader": "^7.1.1",
+    "babel-preset-airbnb": "^1.0.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.4.3",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-config-loopback": "^4.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-lodash-fp": "^2.1.3",
+    "eslint-plugin-react": "^6.2.0",
+    "file-loader": "^0.11.2",
+    "less": "^2.7.1",
+    "less-plugin-autoprefix": "^1.5.1",
+    "react-addons-test-utils": "^15.6.0",
+    "url-loader": "^0.5.9"
   }
 }
