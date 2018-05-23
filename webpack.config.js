@@ -30,6 +30,12 @@ module.exports = {
         test: /\.html$/,
         loader: 'file?name=[name].[ext]',
       },
+      { test: /\.png$/, loader: "url-loader?mimetype=image/png" },
+      { test: /\.jpg$/, loader: "url-loader?mimetype=image/jpg" },
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+      }
     ],
   },
 };
