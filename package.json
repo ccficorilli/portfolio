@@ -15,9 +15,11 @@
   "homepage": "https://github.com/ccficorilli/portfolio#readme",
   "scripts": {
     "test": "echo\\'Error: no test specified\\' && exit 1'",
-    "build": "webpack",
+    "build": "npm run less && webpack",
     "start": "npm run build && node server/server.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "less": "lessc src/css/style.less dist/css/style.css"
+
   },
   "dependencies": {
     "axios": "^0.16.1",

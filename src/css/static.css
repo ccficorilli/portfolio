@@ -1,0 +1,25 @@
+.static-cell {
+    box-sizing: border-box;
+    border-bottom: 3px solid rgb(110, 110, 110);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 34vmin;
+    width: 100%;
+    margin: auto;
+    background-color: burlywood;
+    
+}
+.img-holder {
+    margin: 17vmin auto 0px auto;
+    border: 4px black solid;
+    border-radius: 50%;
+    width: 28vmin;   
+    height: 34vmin;
+    overflow: hidden;
+   
+}
+.headshot {
+    width: 100%;
+
+}
