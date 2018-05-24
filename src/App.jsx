@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Nav from './Nav';
-import headshot from './img/img.jpg';
+
 import Static from './Static';
 import Display from './Display';
+//import './css/app.css'
 
 
 
@@ -61,8 +62,7 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-                <Nav 
-                    openNav={() => this.openNav()}
+                <Nav openNav={() => this.openNav()}
                     closeNav={() => this.closeNav()}
                     nav={this.state.nav}
                     openResume={() => this.openResume()}
@@ -71,6 +71,7 @@ class App extends Component {
                 />
                 <Static />
                 <Display />
+                
             </div>
         )
     }
