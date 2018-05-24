@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import Nav from './Nav';
-import headshot from './img/img.jpg'
+import headshot from './img/img.jpg';
+import Static from './Static';
+import Display from './Display';
 
 
 
@@ -53,7 +56,7 @@ class App extends Component {
         })
     }
     componentDidMount(){
-
+//axios calls here to set state for game.
     }
     render() {
         return (
@@ -66,14 +69,8 @@ class App extends Component {
                     openProjects={() => this.openProjects()}
                     openGame={() => this.openGame()}
                 />
-                <div className="upper-cell">
-                    <div className="img-holder">
-                        <img className="headshot" alt="Something is wrong..." src={headshot} />
-                    </div>
-                </div>
-                <div className="display-cell main">
-                
-                </div>
+                <Static />
+                <Display />
             </div>
         )
     }
