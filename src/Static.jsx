@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+gimport React, { Component } from 'react';
 import './css/static.css';
 import axios from 'axios';
 import backupJSON from '../server/images.json';
