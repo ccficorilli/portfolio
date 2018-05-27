@@ -1,25 +1,35 @@
+
 .static-cell {
     box-sizing: border-box;
-    border-bottom: 3px solid rgb(110, 110, 110);
+    border-bottom: 3px solid #6e6e6e;
     position: fixed;
     top: 0;
     left: 0;
-    height: 34vmin;
+    height: 20vmax;
     width: 100%;
     margin: auto;
-    background-color: burlywood;
-    
-}
-.img-holder {
-    margin: 17vmin auto 0px auto;
-    border: 4px black solid;
-    border-radius: 50%;
-    width: 28vmin;   
-    height: 34vmin;
-    overflow: hidden;
-   
-}
-.headshot {
+    background: transparent;
+    z-index: 0;
+  }
+  .background-img {
+    border-bottom: 6px #c4c4c4 solid;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-
-}
+    height: 20vmax;
+    z-index: -1;
+    transition: 5s;
+  }
+  .img-holder {
+    margin: 10% auto 0px auto;
+    border: 3px #c4c4c4 solid;
+    border-radius: 50%;
+    width: 16vmax;
+    height: 20vmax;
+    overflow: hidden;
+  }
+  .headshot {
+    width: 100%;
+  }
+  

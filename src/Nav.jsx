@@ -1,15 +1,37 @@
 import React, { Component } from 'react';
-//import homeImg from './img/home.png';
 //import closeImg from './img/close.png';
-//import './css/nav.css';
+import './css/nav.css';
 class Nav extends Component{
-   
+   constructor(props){
+       super(props)
+       this.state = ({
+           nav: 'closed',
+           visibility: ''
+       })
+   }
+   openNav = () => {
+    this.setState({
+        nav: 'open',
+        visibility: 'hidden'
+        
+    });
+}
+    closeNav = () => {
+    this.setState({
+        nav: 'closed',
+        visibility: ''
+        
+    });
+}
+    
     
     render() {
         return(
-            <div>
-                <div className={`sidenav ${this.props.nav}`}>
-                    <a className="closebtn" onClick={this.props.closeNav}>
+            <div><span className= {`navbtn`}  
+                    onClick={this.openNav}>&#9776;
+                </span>
+                <div className={`sidenav ${this.state.nav}`}>
+                    <a className="closebtn" onClick={this.closeNav}>
                         <img className="closeImg" src='./img/close.png' alt="broken img" />
                     </a> 
                         <div className="nav-wrapper">                  
@@ -20,9 +42,7 @@ class Nav extends Component{
                             <a href="/">Home</a>
                         </div>
                 </div>
-                <span className="navbtn" 
-                    onClick={this.props.openNav}>&#9776;
-                </span>
+                
             </div>
         )
     }
