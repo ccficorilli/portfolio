@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Nav from './Nav';
-
 import Static from './Static';
 import Display from './Display';
 //import './css/app.css'
@@ -17,57 +16,48 @@ class App extends Component {
            resume: false,
            quote:'',
            movie:'',
-           nav:'closed'
+           imageSRC:'',          
         }
 
     }
-    openNav() {
-        this.setState({
-            nav: 'open'
-        });
-    }
-    closeNav() {
-        this.setState({
-            nav: 'closed'
-        });
-    }
-    openProjects() {
+   
+    openProjects = () => {
         this.setState({
             home: false,
             projects: true,
             resume: false,
-            nav: 'closed'
-        });
+            game: false
+            });
     }
-    openResume() {
+    openResume = () => {
         this.setState({
             home: false,
             projects: false,
             resume: true,
-            nav: 'closed'
-        });
+            game: false
+            });
     }
-    openGame() {
+    openGame = () => {
         this.setState({
             home: false,
             projects: false,
             resume: false,
             game: true,
-            nav: 'closed'
+           
+            
+
         })
     }
-    componentDidMount(){
-//axios calls here to set state for game.
-    }
+    // componentDidMount(){
+       
+    // }
     render() {
         return (
             <div className="container">
-                <Nav openNav={() => this.openNav()}
-                    closeNav={() => this.closeNav()}
-                    nav={this.state.nav}
-                    openResume={() => this.openResume()}
-                    openProjects={() => this.openProjects()}
-                    openGame={() => this.openGame()}
+                <Nav 
+                    openResume={this.openResume}
+                    openProjects={this.openProjects}
+                    openGame={this.openGame}                   
                 />
                 <Static />
                 <Display />
